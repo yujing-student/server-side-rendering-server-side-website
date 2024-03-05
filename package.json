@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test spehelperscified\" && exit 1"
   },
   "keywords": [
     "node",
@@ -25,6 +25,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "uuid": "^9.0.1"
   }
 }

@@ -1,0 +1,17 @@
+:root {
+  --color--icons: rgb(0 0 0 / 50%);
+  --color--main: rgba(1, 193, 123, 1);
+  --color--fourth: #e3e3e3;
+  --color--white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.15;
+  font-family: "Karla", sans-serif;
+}

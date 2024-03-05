@@ -1,0 +1,67 @@
+<%- include('./partials/head') %>
+<main class="">
+    <!--    <section>-->
+
+
+    <form action="/" method="get" class="zoekvak">
+        <label for="id" class="white-text">geef je eigen id op die in de database staat
+            <input type="search" name="id" class=""><!--ik zeg nu ga zoeken en als name geef ik mee dat het id is en dat daar op gezocht word-->
+        </label>
+        <button type="submit" class="submit-searchbutton styling-filterbutton ">zoeken</button>
+    </form>
+
+<!--    gebruk maken van dit zodat je geen foreach loop hoeft te gebruiken-->
+<!--    https://developer.mozilla.org/en-US/docs/Web/API/Window/location-->
+<!--    https://www.w3schools.com/js/js_window_location.asp-->
+    <div class="buttons-list">
+            <p class="white-text">Gebruik de zoekfunctie om jezelf op te zoeken met je id nummer
+                zie je na het zoeken geen id nummer of naam dan bestaat het id niet</p>
+<!--            dit gebruiken omdat je anders een loop nodig hebt met een array en dat wil ik niet-->
+<!--    <button onclick="window.location.href='/squad/1d'" class="submit-searchbutton styling-filterbutton"> Squad 1d</button>-->
+<!--    <button onclick="window.location.href='/squad/1e'" class="submit-searchbutton styling-filterbutton"> Squad 1e</button>-->
+<!--    <button onclick="window.location.href='/squad/1f'" class="submit-searchbutton styling-filterbutton">  Squad 1f</button>-->
+    </div>
+    <% datahouse.forEach(function(person)
+
+    {
+    %>
+        <ul>
+
+
+            <li class="">student id:
+                <%= person.id %> id en address: <a href="./person/<%= person.id %>">   naam: <%= person.id %>
+                    <%= person.street %>
+                    <%= person.house_nr %>
+                </a>
+
+            </li>
+        </ul>
+
+    <% }); %>
+    <ul class="students">
+<!--        zonder de foreach loop kan je de data niet weergeven omdat dit als json data staat en
+ dit tevens ook een array is zodat je jezelf niet steeds hoeft te herhaeln-->
+        <% persons.forEach(person => { %>
+            <li>
+                <dl>
+                    <dt>Naam</dt>
+<!--                    person is de object met daarin de keys id name en susrname -->
+                    <dd><a href="./person/<%= person.id %>"><%= person.id %></a></dd>
+                    <dt>street</dt>
+                    <dd><%= person.street %></dd>
+                    <dt>hournr</dt>
+                    <dd><%= person.house_nr %></dd>
+                    <dt>stad</dt>
+                    <dd><%= person.city %></dd>
+
+                </dl>
+<!--                ternary operator if person heeft geen avatar laat dan de alternative afbeelding zien-->
+                <img src="<%= (person.avatar == '') ? 'images/placeholder.jpg' : person.avatar %>"
+                     onerror="this.src='images/alternative.jpg'">
+            </li>
+        <% }) %>
+    </ul>
+    </div>
+
+</main>
+<%- include('./partials/foot') %>
