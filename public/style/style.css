@@ -1,17 +1,81 @@
-:root {
-  --color--icons: rgb(0 0 0 / 50%);
-  --color--main: rgba(1, 193, 123, 1);
-  --color--fourth: #e3e3e3;
-  --color--white: #fff;
+@font-face {
+  font-family: "proximanova";
+  src: url("/font/ProximaNova-Regular_2607783814.otf");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  font-family: proximanova, sans-serif;
+  width: 100%;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-body {
-  line-height: 1.15;
-  font-family: "Karla", sans-serif;
+/*https://brand.funda.nl/d/d9gw4zTPqYFU/brand-guide?#/basics-1/kleur*/
+/*general*/
+:root {
+  --blue: #0042B3; /*huisstijl #0071B3 orgineel*/
+  --white: #ffffff;
+  --orange: #F7A100;
+  --black: #333333;
+
+  --margin-input-fields: 0 0 1em 0;
+  --margin-2-em:2em;
+}
+
+
+header {
+  background-color: orange;
+  position: relative;
+  color: #1A1A1A;
+  /*max-width: 100%;*/
+  width: 100%;
+}
+.log-funda {
+  width: 150px;
+}
+
+.menu {
+  display: flex;
+  /*justify-content: space-between;*/
+  width: 100%;
+
+}
+
+.hamburger-icon {
+  position: relative;
+  left: 2em;
+  top: -1em;
+  background-color: var(--orange);
+  /*background-color: var(--white);*/
+}
+.login-button{
+  background-color: var(--orange);
+}
+
+
+.hamburger-icon:hover {
+  background-color: var(--blue);
+}
+
+.menu-link {
+  color: #1A1A1A;
+  text-decoration: none;
+}
+
+.menu-ul-open {
+  display: block;
+  margin-top: 0;
+}
+
+a:hover {
+  /*color: var(--white);*/
+  /*background-color: var(--blue);*/
+  text-decoration-line: underline;
 }

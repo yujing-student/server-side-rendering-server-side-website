@@ -4,14 +4,16 @@ import express, {json} from 'express'
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
-// Haal alle squads uit de WHOIS API op
-const squadData = await fetchJson('https://fdnd.directus.app/items/squad')
+// Haal alle images uit de WHOIS API op
+const messages = []
+const images_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_houses_files')
 const allData_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
 
 
 let everything_houses_data = allData_houses.data;//hierin staat alle data
-console.log('dit zijn alle huiizen zonder stringfy'+everything_houses_data+'\n');
-console.log('dit zijn de huizen',JSON.stringify({ everything_houses_data})+'\n');
+let allData_images = images_houses.data;//hierin staat alle data
+// console.log('dit zijn alle huiizen zonder stringfy'+everything_houses_data+'\n');
+// console.log('dit zijn de huizen',JSON.stringify({ everything_houses_data})+'\n');
 // Maak een nieuwe express app aan
 const app = express()
 
@@ -33,7 +35,7 @@ app.use(express.urlencoded({extended: true}));
 
 //async heb je nodig voor je http afhandeling van je request en response en ik maak gebruik van een try and catch voor
 // het opvangen van errors en het afhandelen van errors door async kunnener meerdere taken tegelijk uitgevoerd en terggevegen worden dus niet 1 taak en
-// 1 esponse maar 2 taken en 2 x eenr esponse dat je neit steeds hoeft tewachten
+// 1 response maar 2 taken en 2 x eenr esponse dat je neit steeds hoeft tewachten
 app.get('/', async function (request, response) {
     // Haal alle personen uit de WHOIS API op
     // hier werkt de zoekfunite niet helemaal zoals gehoopt scroll naar het einde van de pagina
@@ -72,11 +74,12 @@ app.get('/', async function (request, response) {
         });
         // res.json({data: filteredStudent})
         // res.render('index', );
+
+// console.log('dit zijn de images',JSON.stringify({ allData_images})+'\n');
         response.render('index', {
             datahouse: filterHouses,
-            squads: squadData.data,
-            data: everything_houses_data,
-            persons: allData_houses.data/*hier zeg ik dat iedereen getoond moet worden*/
+            images: allData_images,
+            persons: everything_houses_data/*hier zeg ik dat iedereen getoond moet worden*/
         });
         // https://dev.to/callmefarad/simple-query-search-in-node-express-api-4c0e
         // res.redirect('/student');
@@ -84,37 +87,6 @@ app.get('/', async function (request, response) {
         response.send(err.message)
     }
 })
-// maak de 2de route aan naar de squad id page ook wel een 2de pagina
-app.get('/squad/:id', (request, response) => {
-    let id = request.params.id;//dit is noodzkaleijk voor het opslaan van de route voor de url
-    if (id === '1d'){//chekcen of dit truee is
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality
-        //onderstaande uitvoeren
-        response.render('squad1d', {
-
-            squads: squadData.data,
-            data: everything_houses_data,
-            persons: allData_houses.data/*hier zeg ik dat iedereen getoond moet worden*/
-        });
-    } else if (id === '1e') {
-        response.render('squadE', {
-
-            squads: squadData.data,
-            data: everything_houses_data,
-            persons: allData_houses.data/*hier zeg ik dat iedereen getoond moet worden*/
-        });
-    } else if (id === '1f') {
-        response.render('squadF', {
-
-            squads: squadData.data,
-            data: everything_houses_data,
-            persons: allData_houses.data/*hier zeg ik dat iedereen getoond moet worden*/
-        });
-    } else {
-        // als dit niet bestaat dan dit weerrgaven in de body
-        response.send('Invalid squad ID');
-    }
-});
 // Maak een POST route voor person
 app.post('/', function (request, response) {
     // Er is nog geen afhandeling van POST, redirect naar GET op /
@@ -144,7 +116,7 @@ app.get('/person/:id', function (request, response) {
                     console.log(e)
                 }
                 // info gebruiken om die te linken aan apidata.data
-                response.render('person', {person: apiData.data, squads: squadData.data, messages: messages});
+                response.render('person', {person: apiData.data, images: images_houses.data, messages: messages});
                 //     messages moet uitgevoerd worden met de meegegeven array
 
 
@@ -270,7 +242,7 @@ app.get("/zoeken", async (request, response) => {
 
         response.render('zoeken', {
             datahouse: filterhouses,
-            squads: squadData.data,
+            images: allData_images.data,
             data: everything_houses_data
         });
         // https://dev.to/callmefarad/simple-query-search-in-node-express-api-4c0e
