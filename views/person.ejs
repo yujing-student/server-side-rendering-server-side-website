@@ -1,15 +1,15 @@
 <%- include('./partials/head') %>
-<main class="MPerson">
+<main class="">
     <a href="/">Back</a>
 <!--    / is om terug te gaan naar de homepagina-->
-    <section class="personcard">
+    <section class="">
         <div>
             <dl>
                 <dt>Naam</dt>
                 <!--                    person is de object met daarin de keys id name en susrname -->
                 <dd class="name-green"><a href="./person/<%= person.id %>"><%= person.name %></a></dd>
                 <dt>Achternaam</dt>
-                <dd><%= person.surname %></dd>
+                <dd><%= person.street %></dd>
                 <dt>Squad</dt>
                 <dd><%= person.squad_id %></dd>
                 <dt>Bio</dt>

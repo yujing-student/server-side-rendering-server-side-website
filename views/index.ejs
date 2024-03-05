@@ -3,78 +3,79 @@
     <!--    <section>-->
 
 
-    <form action="/" method="get" class="zoekvak">
-        <label for="city" class="white-text">geef je eigen id op die in de database staat
-            <input type="search" name="city" class=""><!--ik zeg nu ga zoeken en als name geef ik mee dat het id is en dat daar op gezocht word-->
-        </label>
-        <button type="submit" class="submit-searchbutton styling-filterbutton ">zoeken</button>
-    </form>
 
 <!--    gebruk maken van dit zodat je geen foreach loop hoeft te gebruiken-->
 <!--    https://developer.mozilla.org/en-US/docs/Web/API/Window/location-->
 <!--    https://www.w3schools.com/js/js_window_location.asp-->
-    <div class="buttons-list">
+    <section class="">
+        <h2>bewaarde huizen</h2>
+
+        <form action="/" method="get" class="zoekvak">
+            <label for="city" class="white-text">zoek op plaatsnaam
+                <input type="search" name="city" class=""><!--ik zeg nu ga zoeken en als name geef ik mee dat het id is en dat daar op gezocht word-->
+            </label>
+            <button type="submit" class="submit-searchbutton styling-filterbutton ">zoeken</button>
+        </form>
             <p class="white-text">Gebruik de zoekfunctie om de stad op te zoeken let  erop dat alles staat zoals in de database</p>
-<!--            dit gebruiken omdat je anders een loop nodig hebt met een array en dat wil ik niet-->
-<!--    <button onclick="window.location.href='/squad/1d'" class="submit-searchbutton styling-filterbutton"> Squad 1d</button>-->
-<!--    <button onclick="window.location.href='/squad/1e'" class="submit-searchbutton styling-filterbutton"> Squad 1e</button>-->
-<!--    <button onclick="window.location.href='/squad/1f'" class="submit-searchbutton styling-filterbutton">  Squad 1f</button>-->
-    </div>
 
-    <% datahouse.forEach(function(person)
+        <% datahouse.forEach(function(person)
 
-    {
-    %>
-        <ul>
+        {
+        %>
+        <p>gevonden zoekresultaten:</p>
+            <ul>
 
 
-            <li class="">student id:
-                <%= person.id %> id en address: <a href="./person/<%= person.id %>">   naam: <%= person.id %>
-                    <%= person.street %>
-                    <%= person.house_nr %>
-                    <%= person.city %>
-                </a>
+                <li class="">
+                    <%= person.id %> id en address: <a href="./person/<%= person.id %>">   naam: <%= person.id %>
+                        <%= person.street %>
+                        <%= person.house_nr %>
+                        <%= person.city %>
+                    </a>
 
-            </li>
-        </ul>
+                </li>
+            </ul>
 
-    <% }); %>
-    <options>
+        <% }); %>
 
-    </options>
-    <ul class="students">
+        <label for="filters">kies waar je op wilt filteren:</label>
+
+        <label for="filters"></label><select id="filters">
+            <option value="bewaardatum">bewaardatum</option>
+            <option value="prijs">prijs</option>
+            <option value="adress">adress</option>
+            <option value="datum">datum</option>
+        </select>
+    </section>
+
 <!--        zonder de foreach loop kan je de data niet weergeven omdat dit als json data staat en
  dit tevens ook een array is zodat je jezelf niet steeds hoeft te herhaeln-->
         <% persons.forEach(person => { %>
-            <li>
-                <dl>
-                    <dt>id</dt>
+          <div class="list-houses">
+              <ul class="">
+
+
+
+
+
 <!--                    person is de object met daarin de keys id name en susrname -->
-                    <dd><a href="./person/<%= person.id %>"><%= person.id %></a></dd>
-                    <dt>street</dt>
-                    <dd><%= person.street %></dd>
-                    <dt>hournr</dt>
-                    <dd><%= person.house_nr %></dd>
-                    <dt>stad</dt>
-                    <dd><%= person.city %></dd>
-                    <dt>postcode</dt>
-                    <dd><%= person.postal_code %></dd>
-                    <dt>prijs</dt>
-                    <dd><%= person.price %></dd>
-                    <dt>kamers</dt>
-                    <dd><%= person.rooms %></dd>
 
-<!--                    <% images.forEach(person => { %><dd>-->
-<!--                        <img src="<%= (person.directus_files_id == '') ? 'images/placeholder.jpg' : person.directus_files_id %>"-->
-<!--                             onerror="this.src='images/alternative.jpg'">-->
-<!--                    </dd>        <% }) %>-->
 
-                </dl>
+              <li><a href="./person/<%= person.street %>"><%= person.street %> <%= person.house_nr%> <%= person.nr_addition%></a></li>
 
-            </li>
+                    <li><%= person.postal_code %> <%= person.city %></li>
+                    <li><%= person.price %>kk</li>
+                    <li><%= person.rooms %>kamers</li>
+                    <li><%= person.m2 %>oppperavlakte</li>
+                    <li><%= person.m2_garden %>tuin</li>
+                    <li><%= person.listed_date %>tuin</li>
+                    <li><%= person.images %></li>
+              </ul></div>
+
         <% }) %>
 
-    </ul>
+        </ul>
+    </div>
 
     </div>
 

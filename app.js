@@ -7,13 +7,20 @@ import fetchJson from './helpers/fetch-json.js'
 // Haal alle images uit de WHOIS API op
 const messages = []
 const images_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_houses_files')
+
 const allData_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
 
 
 let everything_houses_data = allData_houses.data;//hierin staat alle data
 let allData_images = images_houses.data;//hierin staat alle data
+
+const image1 = images_houses.data.directus_files_id;
+const image2 = JSON.stringify({ image1});
+const imageself2 = await fetchJson('https://fdnd-agency.directus.app/assets/'+image2)
+
 // console.log('dit zijn alle huiizen zonder stringfy'+everything_houses_data+'\n');
-// console.log('dit zijn de huizen',JSON.stringify({ everything_houses_data})+'\n');
+// console.log('dit zijn de huizen',JSON.stringify({ imageself})+'\n');
+console.log('dit zijn de images',JSON.stringify({ imageself2})+'\n');
 // Maak een nieuwe express app aan
 const app = express()
 
