@@ -15,12 +15,12 @@ const images_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_
 let allData_images = images_houses.data;//hierin staat alle data
 
 const image1 = allData_images.directus_files_id;
+// alles hieronder werkt niet
 // // console.log('dit is het field: ' ,JSON.stringify({ image1 }))
-const imageURL = `https://fdnd-agency.directus.app/assets/${image1}`;
+// const imageURL = `https://fdnd-agency.directus.app/assets/${image1}`;
 // const image2 =JSON.stringify({image1})
 // const imageself2 = await fetchJson('https://fdnd-agency.directus.app/assets/'+image2)
-const imageself3 = await fetchJson(imageURL);
-console.log('dit zijn de images:', JSON.stringify({ imageself3 }));
+// const imageself3 = await fetchJson(imageURL);
 
 
 // console.log('dit is image2',JSON.parse({ image2})+'\n');
@@ -54,6 +54,8 @@ app.get('/', async function (request, response) {
     try {
         const userQuery =  request.query; /*dit is het id wat de gebruiker ingeeft bij het zoekvak en die word opgelsagen in een vairable en qeury gebruik je omdat dit een zoekopdracht is*/
         // dit is een queryparameter   https://medium.com/@aidana1529/understanding-the-difference-between-req-params-req-body-and-req-query-e9cf01fc3150
+        const filteredimagesfirst = allData_images.filter(item => item.f_houses_id === 1);
+        console.log(filteredimagesfirst)
 
         const filterHouses =  allData_houses.data.filter((informationHouses) => { /*dit is een array met daarin de filter waarin de gegevens van een specifieke student staan*/
 
@@ -91,7 +93,8 @@ app.get('/', async function (request, response) {
         response.render('index', {
             datahouse: filterHouses,
             images: allData_images,
-            persons: everything_houses_data/*hier zeg ik dat iedereen getoond moet worden*/
+            filteredimages:filteredimagesfirst,
+            persons: everything_houses_data,filteredimagesfirst/*hier zeg ik dat iedereen getoond moet worden*/
         });
         // https://dev.to/callmefarad/simple-query-search-in-node-express-api-4c0e
         // res.redirect('/student');
