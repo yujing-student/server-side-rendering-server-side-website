@@ -44,7 +44,7 @@
         <% persons.forEach(person => { %>
             <li>
                 <dl>
-                    <dt>Naam</dt>
+                    <dt>id</dt>
 <!--                    person is de object met daarin de keys id name en susrname -->
                     <dd><a href="./person/<%= person.id %>"><%= person.id %></a></dd>
                     <dt>street</dt>
@@ -53,10 +53,18 @@
                     <dd><%= person.house_nr %></dd>
                     <dt>stad</dt>
                     <dd><%= person.city %></dd>
+                    <dt>postcode</dt>
+                    <dd><%= person.postal_code %></dd>
+                    <dt>prijs</dt>
+                    <dd><%= person.price %></dd>
+                    <dt>kamers</dt>
+                    <dd><%= person.rooms %></dd>
 
                 </dl>
-<!--                ternary operator if person heeft geen avatar laat dan de alternative afbeelding zien-->
-                <img src="<%= (person.avatar == '') ? 'images/placeholder.jpg' : person.avatar %>"
+                <img src="<%= (person.images)%>">
+
+
+                <img src="<%= (person.images == '') ? 'images/placeholder.jpg' : person.images %>"
                      onerror="this.src='images/alternative.jpg'">
             </li>
         <% }) %>
