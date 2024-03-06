@@ -62,23 +62,12 @@ app.get('/', async function (request, response) {
             let true_or_false;/*deze waarden is leeg omdat dit true of false moet returen */
             let isValid = true;
             for (let key in userQuery) {
-                // console.log(`dit is de key :${key}`)/*ook wel het id*/
-                // console.log(`dit is de userquery dus de invoer ${JSON.stringify(userQuery)}`)/*het id nummer user id*/
-                // console.log(`dit is de info dus de opgehaalde informatie van die persoon ${JSON.stringify(informationStudent)}`)
+
 
                 let correctinformation = informationHouses[key] == userQuery[key];//check of dit klopt zo ja dan is correct information true
                 // maak gebruik van == omdat de data in de array inforamtion student als "nummer" staat en je typt in je userquery nummer 9
                 // zonder "" en als je === maakt dan returnt die false omdat in de database het een string is en je userquery word ogpelsagen als number
                 true_or_false = isValid && correctinformation;/*is de ingegeveninformatie juist zo ja return*/
-
-                // if(true_or_false == false){deze code staat in comment vanwege het debuggen
-                //     console.log('er is geen overeenkomst de student bestaat neit')
-                // }s
-                //
-                // if(true_or_false == true){
-                //     console.log('de student is gevonden')
-                // }
-                //     gebruik maken van == instead of === omdat dit false is
                 //     https://www.freecodecamp.org/news/loose-vs-strict-equality-in-javascript/
             }
             return true_or_false;
