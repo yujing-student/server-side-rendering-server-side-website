@@ -91,3 +91,14 @@ a:hover {
 .beschrijving{
   font-size: 1.2em;
 }
+
+@media only screen and (min-width: 450px) {
+  .menu-ul {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+
+  }
+}
