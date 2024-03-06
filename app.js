@@ -146,7 +146,7 @@ console.log(JSON.stringify(apiData)+'dit is de apidata')
 app.post('/person/:id/', function (request, response) {
     // Stap 1: Haal de huidige data op, zodat we altijd up-to-date zijn, en niks weggooien van anderen
     // Haal eerst de huidige gegevens voor deze persoon op, uit de WHOIS API
-    fetchJson('https://fdnd-agency.directus.app/items/f_houses/person/' + request.params.id)
+    fetchJson('https://fdnd-agency.directus.app/items/f_houses/' + request.params.id)
         .then((apiData) => {
 
             // Het custom field is een String, dus die moeten we eerst
