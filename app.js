@@ -75,11 +75,12 @@ app.get('/', async function (request, response) {
         response.render('index', {
             datahouse: filterHouses,
             images: allData_images,
+            messages:messages,
             persons:everything_houses_data
             // persons: everything_houses_data,filteredimagesfirst/*hier zeg ik dat iedereen getoond moet worden*/
         });
         // https://dev.to/callmefarad/simple-query-search-in-node-express-api-4c0e
-        // res.redirect('/student');
+
     } catch (err) {
         response.send(err.message)
     }
@@ -91,7 +92,7 @@ app.post('/', function (request, response) {
     // bericht moet je gebruiken want je hebt name gebruikt bij je form
 
     // gebruik maken van person zodat je de data kan oproepen
-    response.redirect('/person/' + request.body.id);/*het bericht moet weergegeven worden op deze pagina daarom is er een request*/
+    response.redirect('/');/*het bericht moet weergegeven worden op deze pagina daarom is er een request*/
 
 
 })
@@ -189,7 +190,7 @@ app.post('/person/:id/', function (request, response) {
             }).then((patchresponse) => {
                 // voer dit uit
                 console.log(patchresponse);
-                response.redirect(303, '/person/' + request.params.id)
+                response.redirect(303, '/')
             })
 
 
@@ -238,7 +239,7 @@ app.get("/zoeken", async (request, response) => {
             data: everything_houses_data
         });
         // https://dev.to/callmefarad/simple-query-search-in-node-express-api-4c0e
-        // res.redirect('/student');
+
     } catch (err) {
         response.send(err.message)
     }
