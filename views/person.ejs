@@ -3,27 +3,26 @@
     <a href="/">Back</a>
 <!--    / is om terug te gaan naar de homepagina-->
     <section class="">
-        <div>
-            <dl>
-                <dt>Naam</dt>
-                <!--                    person is de object met daarin de keys id name en susrname -->
-                <dd class="name-green"><a href="./person/<%= person.id %>"><%= person.name %></a></dd>
-                <dt>Achternaam</dt>
-                <dd><%= person.street %></dd>
-                <dt>Squad</dt>
-                <dd><%= person.squad_id %></dd>
-                <dt>Bio</dt>
-                <dd><%= person.bio %></dd>
-            </dl>
-            <img src="<%= (person.avatar == '') ? '/images/placeholder.jpg' : person.avatar %>"
-                 onerror="this.src='/images/alternative.jpg'">
-        </div>
+
+            <div class="list-houses">
+                <ul class="">
+                    <li><a href="./person/<%= person.id %>"><%= person.street%><%= person.house_nr%></a></li>
+                    <li><%= person.postal_code %> <%= person.city %></li>
+                    <li><%= person.price %> kk</li>
+                    <li><%= person.rooms %> kamers</li>
+                    <li><%= person.m2 %> oppperavlakte</li>
+                    <li><%= person.m2_garden %> tuin</li>
+                    <li><%= person.listed_date %> datum</li>
+                    <li><%= person.id %> id</li>
+                    <li><span class="beschrijving">beschirjving</span><%- person.description %> </li>
+                </ul></div>
+
     </section>
     <section class="send">
 
         <form method="POST" action="/" class="chatbox">
             <input type="hidden" name="id" value="<%= person.id %>">
-            <label for="bericht">stuur je bericht
+            <label for="bericht">notities
                 <textarea id="bericht" required name="bericht">
 </textarea>
             </label>

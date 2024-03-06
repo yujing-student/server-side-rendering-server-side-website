@@ -47,31 +47,10 @@
             <option value="datum">datum</option>
         </select>
     </section>
-
-<!--        zonder de foreach loop kan je de data niet weergeven omdat dit als json data staat en
- dit tevens ook een array is zodat je jezelf niet steeds hoeft te herhaeln-->
         <% persons.forEach(person => { %>
           <div class="list-houses">
               <ul class="">
-
-
-
-
-
-<!--                    person is de object met daarin de keys id name en susrname -->
-
-<!--                  <% images.forEach(person => { %>-->
-                      <li class="">nummer foto: <img src="https://fdnd-agency.directus.app/
-                      assets/<%= person.directus_files_id %>"
-                             alt=""class="image-size"> dit zijn nu alle fotos</li>
-<!--                      <li class="">nummer foto: <img src="https://fdnd-agency.directus.app/assets/
-
-<%= person.filteredimagesfirst %>" alt=""class="image-size"> </li>-->
-
-<!--                  <% }) %>-->
-<!--              <li><a href="./person/<%= person.street %>"><%= person.street %> <%= person.house_nr%> <%= person.nr_addition%></a></li>-->
-              <li><a href="./person/<%= person.id %>">dit is de link naar de detailpagina</a></li>
-                  <li> <img src="https://fdnd-agency.directus.app/assets/<%= person.filteredimagesfirst %>">foto</li>
+              <li><a href="./person/<%= person.id %>"><%= person.street%><%= person.house_nr%></a></li>
                     <li><%= person.postal_code %> <%= person.city %></li>
                     <li><%= person.price %> kk</li>
                     <li><%= person.rooms %> kamers</li>
@@ -79,6 +58,7 @@
                     <li><%= person.m2_garden %> tuin</li>
                     <li><%= person.listed_date %> datum</li>
                     <li><%= person.id %> id</li>
+                    <li><span class="beschrijving">beschirjving</span><%- person.description %> </li>
               </ul></div>
 
 
