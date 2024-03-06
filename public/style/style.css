@@ -36,18 +36,23 @@ header {
   color: #1A1A1A;
   /*max-width: 100%;*/
   width: 100%;
+  padding: 2em;
 }
 .log-funda {
   width: 150px;
 }
 
-.menu {
+.menu-ul {
   display: flex;
+  margin-top: -15em;
   /*justify-content: space-between;*/
   width: 100%;
 
 }
-
+.menu-ul-open {
+  display: block;
+  margin-top: 1em;
+}
 .hamburger-icon {
   position: relative;
   left: 2em;
@@ -69,10 +74,7 @@ header {
   text-decoration: none;
 }
 
-.menu-ul-open {
-  display: block;
-  margin-top: 0;
-}
+
 
 a:hover {
   /*color: var(--white);*/

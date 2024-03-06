@@ -7,6 +7,7 @@ function ShowHamburgerMenu () {/*hamburger menu*/
 
     });
 }
+ShowHamburgerMenu();
 slider()
 sliderkeuken()
 sliderbadkmaer()
