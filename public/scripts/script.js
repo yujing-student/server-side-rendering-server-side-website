@@ -8,6 +8,19 @@ function ShowHamburgerMenu () {/*hamburger menu*/
     });
 }
 ShowHamburgerMenu();
+shownotes();
+function shownotes () {/*hamburger menu*/
+    let button = document.querySelector('.button-notes');/*select icon hamburger*/
+    let menu = document.querySelector('.hide-notes');
+
+    button.addEventListener('click', () => {/*clickfunction*/
+        menu.classList.toggle('hide-notes-open');/*open the menue*/
+
+    });
+}
+
+
+
 slider()
 sliderkeuken()
 sliderbadkmaer()

@@ -91,6 +91,12 @@ a:hover {
 .beschrijving{
   font-size: 1.2em;
 }
+.hide-notes{
+  display: none;
+}
+.hide-notes-open{
+  display: block;
+}
 
 @media only screen and (min-width: 450px) {
   .menu-ul {
