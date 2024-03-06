@@ -27,6 +27,7 @@
 
 
                 <li class="">
+
                     <%= person.id %> id en address: <a href="./person/<%= person.id %>">   naam: <%= person.id %>
                         <%= person.street %>
                         <%= person.house_nr %>
@@ -50,6 +51,7 @@
         <% persons.forEach(person => { %>
           <div class="list-houses">
               <ul class="">
+                  <li><%= person.poster_image %> afbeelding</li>
               <li><a href="./person/<%= person.id %>"><%= person.street%><%= person.house_nr%></a></li>
                     <li><%= person.postal_code %> <%= person.city %></li>
                   <li class="beschrijving"><%= person.price %> kk </li>

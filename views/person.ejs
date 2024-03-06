@@ -9,6 +9,7 @@
                     <li><a href="./person/<%= person.id %>"><%= person.street%><%= person.house_nr%></a></li>
                     <li><%= person.postal_code %> <%= person.city %></li>
                     <li><%= person.price %> kk</li>
+                    <li><%= person.posterimage %> afbeelding</li>
                     <li><%= person.rooms %> kamers</li>
                     <li><%= person.m2 %> oppperavlakte</li>
                     <li><%= person.m2_garden %> tuin</li>
@@ -18,6 +19,9 @@
                 </ul></div>
 
     </section>
+
+<!--    https://fdnd-agency.directus.app/admin/content/f_houses-->
+
     <section class="send">
 
         <form method="POST" action="/" class="chatbox">
