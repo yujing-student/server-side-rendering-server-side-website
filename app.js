@@ -55,7 +55,7 @@ app.get('/', async function (request, response) {
         const userQuery =  request.query; /*dit is het id wat de gebruiker ingeeft bij het zoekvak en die word opgelsagen in een vairable en qeury gebruik je omdat dit een zoekopdracht is*/
         // dit is een queryparameter   https://medium.com/@aidana1529/understanding-the-difference-between-req-params-req-body-and-req-query-e9cf01fc3150
         const filteredimagesfirst = allData_images.filter(item => item.f_houses_id === 1);
-        console.log(filteredimagesfirst)
+        // console.log(filteredimagesfirst)
 
         const filterHouses =  allData_houses.data.filter((informationHouses) => { /*dit is een array met daarin de filter waarin de gegevens van een specifieke student staan*/
 
@@ -94,7 +94,8 @@ app.get('/', async function (request, response) {
             datahouse: filterHouses,
             images: allData_images,
             filteredimages:filteredimagesfirst,
-            persons: everything_houses_data,filteredimagesfirst/*hier zeg ik dat iedereen getoond moet worden*/
+            persons:everything_houses_data
+            // persons: everything_houses_data,filteredimagesfirst/*hier zeg ik dat iedereen getoond moet worden*/
         });
         // https://dev.to/callmefarad/simple-query-search-in-node-express-api-4c0e
         // res.redirect('/student');
@@ -118,20 +119,16 @@ app.post('/', function (request, response) {
 
 
 app.get('/person/:id', function (request, response) {
-    fetchJson('https://fdnd.directus.app/items/person/' + request.params.id)
+    fetchJson('https://fdnd-agency.directus.app/items/f_houses/' + request.params.id)
 
         .then((apiData) => {
             // request.params.id gebruik je zodat je de exacte student kan weergeven dit si een routeparmater naar de route van die persoon
-
+console.log(JSON.stringify(apiData)+'dit is de apidata')
             if (apiData.data) {/*als data voer dan dit uit */
 
-                try {/*gebruik maken van een try en catch zodat de errror gelogt word*/
-                    apiData.data.custom = JSON.parse(apiData.data.custom)
-                } catch (e) {
-                    console.log(e)
-                }
                 // info gebruiken om die te linken aan apidata.data
-                response.render('person', {person: apiData.data, images: images_houses.data, messages: messages});
+                response.render('person', {person: apiData.data, images:
+                    images_houses.data, messages: messages});
                 //     messages moet uitgevoerd worden met de meegegeven array
 
 
@@ -149,7 +146,7 @@ app.get('/person/:id', function (request, response) {
 app.post('/person/:id/', function (request, response) {
     // Stap 1: Haal de huidige data op, zodat we altijd up-to-date zijn, en niks weggooien van anderen
     // Haal eerst de huidige gegevens voor deze persoon op, uit de WHOIS API
-    fetchJson('https://fdnd.directus.app/items/person/' + request.params.id)
+    fetchJson('https://fdnd-agency.directus.app/items/f_houses/person/' + request.params.id)
         .then((apiData) => {
 
             // Het custom field is een String, dus die moeten we eerst
@@ -196,7 +193,7 @@ app.post('/person/:id/', function (request, response) {
 
             // Voeg de nieuwe lijst messages toe in de WHOIS API,
             // via een PATCH request
-            fetchJson('https://fdnd.directus.app/items/person/' + request.params.id,
+            fetchJson('https://fdnd-agency.directus.app/items/f_houses/person/' + request.params.id,
 
                 {/*dit is de person/9 bijvoorbeeld*/
                 //     de body is de payload omdat daar de data aangepast word voor in de server

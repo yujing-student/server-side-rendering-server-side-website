@@ -36,14 +36,6 @@
                 <li><%= message %></li>
             <% }) %>
         </ul>
-
-        <form method="POST" action="/person/<%= person.id %>">
-            <% if (person.custom.like) { %>
-                <button type="submit" name="actie" value="vind-ik-niet-leuk" class="heart">💔</button>
-            <% } else { %>
-                <button type="submit" name="actie" value="vind-ik-leuk" class="heart">❤️</button>
-            <% } %>
-        </form>
     </section>
 
 
