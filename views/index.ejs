@@ -52,14 +52,40 @@
               <ul class="">
               <li><a href="./person/<%= person.id %>"><%= person.street%><%= person.house_nr%></a></li>
                     <li><%= person.postal_code %> <%= person.city %></li>
-                    <li><%= person.price %> kk</li>
-                    <li><%= person.rooms %> kamers</li>
-                    <li><%= person.m2 %> oppperavlakte</li>
+                  <li class="beschrijving"><%= person.price %> kk </li>
+                    <li><%= person.m2 %> oppperavlakte <%= person.rooms %> kamers</li>
+                    <li>mijn notities</li>
                     <li><%= person.m2_garden %> tuin</li>
                     <li><%= person.listed_date %> datum</li>
                     <li><%= person.id %> id</li>
                     <li><span class="beschrijving">beschirjving</span><%- person.description %> </li>
-              </ul></div>
+              </ul>
+              <section>
+                  <h2>score</h2>
+                  <ul>
+                      <li>algmeen
+                          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                          <p>Value: <span id="demo"></span></p></li>
+                      <li>keuken             <input type="range" min="1" max="100" value="0" class="slider" id="keuken">
+                          <p>Value: <span id="keukenvalue"></span></p></li>
+
+                      <li>badkamer             <input type="range" min="1" max="100" value="0" class="slider" id="badkamer">
+                          <p>Value: <span id="badkamervalue"></span></p></li>
+
+
+                      <li>tuin            <input type="range" min="1" max="100" value="0" class="slider" id="tuin">
+                          <p>Value: <span id="tuinvalue"></span></p></li>
+
+
+                      <li>prijs            <input type="range" min="1" max="100" value="0" class="slider" id="prijs">
+                          <p>Value: <span id="prijsvalue"></span></p></li>
+                      <li>ligging             <input type="range" min="1" max="100" value="0" class="slider" id="ligging">
+                          <p>Value: <span id="liggingvalue"></span></p></li>
+                      <li>oppervlakte            <input type="range" min="1" max="100" value="0" class="slider" id="oppervlakte">
+                          <p>Value: <span id="oppervlaktevalue"></span></p></li>
+                  </ul>
+              </section>
+          </div>
 
 
         <% }) %>

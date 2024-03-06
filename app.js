@@ -12,15 +12,7 @@ const allData_houses = await fetchJson('https://fdnd-agency.directus.app/items/f
 let everything_houses_data = allData_houses.data;//hierin staat alle data
 
 const images_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_houses_files')
-let allData_images = images_houses.data;//hierin staat alle data
-
-// const image1 = allData_images.directus_files_id;
-// alles hieronder werkt niet
-// // console.log('dit is het field: ' ,JSON.stringify({ image1 }))
-// const imageURL = `https://fdnd-agency.directus.app/assets/${image1}`;
-// const image2 =JSON.stringify({image1})
-// const imageself2 = await fetchJson('https://fdnd-agency.directus.app/assets/'+image2)
-// const imageself3 = await fetchJson(imageURL);
+let allData_images = images_houses.data;//hierin staat alle data van de images
 
 
 // console.log('dit is image2',JSON.parse({ image2})+'\n');
@@ -48,6 +40,7 @@ app.use(express.urlencoded({extended: true}));
 //async heb je nodig voor je http afhandeling van je request en response en ik maak gebruik van een try and catch voor
 // het opvangen van errors en het afhandelen van errors door async kunnener meerdere taken tegelijk uitgevoerd en terggevegen worden dus niet 1 taak en
 // 1 response maar 2 taken en 2 x eenr esponse dat je neit steeds hoeft tewachten
+
 app.get('/', async function (request, response) {
     // Haal alle personen uit de WHOIS API op
     // hier werkt de zoekfunite niet helemaal zoals gehoopt scroll naar het einde van de pagina
@@ -111,9 +104,8 @@ app.get('/person/:id', function (request, response) {
 
         .then((apiData) => {
             // request.params.id gebruik je zodat je de exacte student kan weergeven dit si een routeparmater naar de route van die persoon
-console.log(JSON.stringify(apiData)+'dit is de apidata')
             if (apiData.data) {/*als data voer dan dit uit */
-
+                console.log('apidate bestaat u gaat nu naar de person page')
                 // info gebruiken om die te linken aan apidata.data
                 response.render('person', {person: apiData.data, images:
                     images_houses.data, messages: messages});
