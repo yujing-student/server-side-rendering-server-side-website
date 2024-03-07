@@ -83,6 +83,7 @@ a:hover {
 }
 .list-houses{
   background-color: #f5d5d5;
+  border
 }
 .image-size{
   width: 200px;
@@ -110,6 +111,16 @@ a:hover {
 }
 
 @media only screen and (min-width: 650px) {
+  .list-houses{
+    display: grid;
+    grid-auto-columns: auto auto;
+  }
+  .ul-one{
+    grid-column: 1;
+  }
+  .ul-two{
+    grid-column: 2;
+  }
   .grid-items-house {
     display: grid;
     grid-template-rows: auto;
