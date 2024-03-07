@@ -16,6 +16,7 @@
             </label>
             <button type="submit" class="submit-searchbutton styling-filterbutton ">zoeken</button>
         </form>
+
         <p class="">Gebruik de zoekfunctie om de stad op te zoeken let erop dat alles staat zoals in de database</p>
 
         <% datahouse.forEach(function(person)
@@ -24,7 +25,6 @@
         %>
             <p>gevonden zoekresultaten:</p>
             <ul>
-
 
                 <li class="">
 
@@ -35,6 +35,7 @@
                     </a>
 
                 </li>
+
             </ul>
 
         <% }); %>
@@ -47,12 +48,19 @@
             <option value="adress">adress</option>
             <option value="datum">datum</option>
         </select>
+
     </section>
+
     <% persons.forEach(person => { %>
-        <div class="list-houses">
+
+        <section class="list-houses">
+            <h2>bewaarde huizen</h2>
             <ul class="ul-one">
-                <li class="itemone"><img class="image-size" src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>" alt="image house"></li>
+                <li class="itemone"><img class="image-size"
+                                         src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>"
+                                         alt="image house"></li>
             </ul>
+
             <ul class="grid-items-house ul-two">
 
                 <li class="item"><a href="./person/<%= person.id %>"><%= person.street %><%= person.house_nr %></a></li>
@@ -64,8 +72,11 @@
                 </li>
 
             </ul>
+
             <section class="hide-notes">
+
                 <h2>score</h2>
+
                 <ul>
                     <li>algmeen
                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
@@ -99,23 +110,17 @@
 
                 </form>
 
-                    <h2 class="">Hier zie je uw berichten</h2>
-                    <ul class="output">
-                        <% messages.forEach(message =>{ %>
-                            <li><%= message %></li>
-                        <% }) %>
-                    </ul>
+                <h2 class="">Hier zie je uw berichten</h2>
+                <ul class="output">
+                    <% messages.forEach(message =>{ %>
+                        <li><%= message %></li>
+                    <% }) %>
+                </ul>
 
             </section>
-        </div>
+        </section>
 
     <% }) %>
-
-    </ul>
-    </div>
-
-    </div>
-
 
 </main>
 <%- include('./partials/foot') %>
