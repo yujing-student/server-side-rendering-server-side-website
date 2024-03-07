@@ -84,31 +84,32 @@
                       <li>oppervlakte            <input type="range" min="1" max="100" value="0" class="slider" id="oppervlakte">
                           <p>Value: <span id="oppervlaktevalue"></span></p></li>
                   </ul>
+
+
+                      <form method="POST" action="/" class="chatbox">
+                          <input type="hidden" name="id" value="<%= person.id %>">
+                          <label for="bericht">notities
+                              <textarea id="bericht" required name="bericht">
+</textarea>
+                          </label>
+                          <button type="submit">laat je notite achter</button>
+
+                      </form>
+                  <section>
+                      <h2 class="">Hier zie je uw berichten</h2>
+                      <ul class="output">
+                          <% messages.forEach(message =>{ %>
+                              <li><%= message %></li>
+                          <% }) %>
+                      </ul>
+                  </section>
+
               </section>
           </div>
 
 
         <% }) %>
-    <% persons.forEach(person => { %>
-        <section class="send">
 
-            <form method="POST" action="/" class="chatbox">
-                <input type="hidden" name="id" value="<%= person.id %>">
-                <label for="bericht">notities
-                    <textarea id="bericht" required name="bericht">
-</textarea>
-                </label>
-                <button type="submit">laat je notite achter</button>
-
-            </form>
-            <h2 class="">Hier zie je uw berichten</h2>
-            <ul class="output">
-                <% messages.forEach(message =>{ %>
-                    <li><%= message %></li>
-                <% }) %>
-            </ul>
-        </section>
-    <% }) %>
 
 
         </ul>
