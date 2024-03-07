@@ -108,3 +108,20 @@ a:hover {
 
   }
 }
+
+@media only screen and (min-width: 650px) {
+  .grid-items-house {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-columns: auto auto;
+
+
+  }
+  .item{
+    grid-column: 2;
+  }
+  .itemone{
+    grid-auto-columns: auto;
+    grid-column: 1;
+  }
+}

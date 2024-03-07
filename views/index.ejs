@@ -50,13 +50,13 @@
     </section>
     <% persons.forEach(person => { %>
         <div class="list-houses">
-            <ul class="">
-                <li><img src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>" alt="image house"></li>
-                <li><a href="./person/<%= person.id %>"><%= person.street %><%= person.house_nr %></a></li>
-                <li><%= person.postal_code %> <%= person.city %></li>
+            <ul class="grid-items-house">
+                <li class="itemone"><img class="image-size" src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>" alt="image house"></li>
+                <li class="item"><a href="./person/<%= person.id %>"><%= person.street %><%= person.house_nr %></a></li>
+                <li class="item"><%= person.postal_code %> <%= person.city %></li>
                 <li class="beschrijving"><%= person.price %> kk</li>
-                <li><%= person.m2 %> oppperavlakte <%= person.rooms %> kamers</li>
-                <li>
+                <li class="item"><%= person.m2 %> oppperavlakte <%= person.rooms %> kamers</li>
+                <li class="item">
                     <button type="button" class="button-notes">mijn notities</button>
                 </li>
 
