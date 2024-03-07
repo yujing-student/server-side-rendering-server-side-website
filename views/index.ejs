@@ -3,32 +3,32 @@
     <!--    <section>-->
 
 
-
-<!--    gebruk maken van dit zodat je geen foreach loop hoeft te gebruiken-->
-<!--    https://developer.mozilla.org/en-US/docs/Web/API/Window/location-->
-<!--    https://www.w3schools.com/js/js_window_location.asp-->
+    <!--    gebruk maken van dit zodat je geen foreach loop hoeft te gebruiken-->
+    <!--    https://developer.mozilla.org/en-US/docs/Web/API/Window/location-->
+    <!--    https://www.w3schools.com/js/js_window_location.asp-->
     <section class="filter-section">
         <h2>bewaarde huizen</h2>
 
         <form action="/" method="get" class="zoekvak">
             <label for="city" class="white-text">zoek op plaatsnaam
-                <input type="search" name="city" class=""><!--ik zeg nu ga zoeken en als name geef ik mee dat het id is en dat daar op gezocht word-->
+                <input type="search" name="city" class="">
+                <!--ik zeg nu ga zoeken en als name geef ik mee dat het id is en dat daar op gezocht word-->
             </label>
             <button type="submit" class="submit-searchbutton styling-filterbutton ">zoeken</button>
         </form>
-            <p class="">Gebruik de zoekfunctie om de stad op te zoeken let  erop dat alles staat zoals in de database</p>
+        <p class="">Gebruik de zoekfunctie om de stad op te zoeken let erop dat alles staat zoals in de database</p>
 
         <% datahouse.forEach(function(person)
 
         {
         %>
-        <p>gevonden zoekresultaten:</p>
+            <p>gevonden zoekresultaten:</p>
             <ul>
 
 
                 <li class="">
 
-                    <%= person.id %> id en address: <a href="./person/<%= person.id %>">   naam: <%= person.id %>
+                    <%= person.id %> id en address: <a href="./person/<%= person.id %>"> naam: <%= person.id %>
                         <%= person.street %>
                         <%= person.house_nr %>
                         <%= person.city %>
@@ -48,75 +48,70 @@
             <option value="datum">datum</option>
         </select>
     </section>
-        <% persons.forEach(person => { %>
-          <div class="list-houses">
-              <ul class="">
-                  <li> <img src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>"></li>
-                  <li> <img src="https://fdnd-agency.directus.app/assets/819_1080"></li>
-              <li><a href="./person/<%= person.id %>"><%= person.street%><%= person.house_nr%></a></li>
-                    <li><%= person.postal_code %> <%= person.city %></li>
-                  <li class="beschrijving"><%= person.price %> kk </li>
-                    <li><%= person.m2 %> oppperavlakte <%= person.rooms %> kamers</li>
-                  <li><button type="button" class="button-notes">mijn notities</button></li>
+    <% persons.forEach(person => { %>
+        <div class="list-houses">
+            <ul class="">
+                <li><img src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>" alt="image house"></li>
+                <li><a href="./person/<%= person.id %>"><%= person.street %><%= person.house_nr %></a></li>
+                <li><%= person.postal_code %> <%= person.city %></li>
+                <li class="beschrijving"><%= person.price %> kk</li>
+                <li><%= person.m2 %> oppperavlakte <%= person.rooms %> kamers</li>
+                <li>
+                    <button type="button" class="button-notes">mijn notities</button>
+                </li>
 
-              </ul>
-              <section class="hide-notes">
-                  <h2>score</h2>
-                  <ul>
-                      <li>algmeen
-                          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                          <p>Value: <span id="demo"></span></p></li>
-                      <li>keuken             <input type="range" min="1" max="100" value="0" class="slider" id="keuken">
-                          <p>Value: <span id="keukenvalue"></span></p></li>
+            </ul>
+            <section class="hide-notes">
+                <h2>score</h2>
+                <ul>
+                    <li>algmeen
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <p>Value: <span id="demo"></span></p></li>
+                    <li>keuken <input type="range" min="1" max="100" value="0" class="slider" id="keuken">
+                        <p>Value: <span id="keukenvalue"></span></p></li>
 
-                      <li>badkamer             <input type="range" min="1" max="100" value="0" class="slider" id="badkamer">
-                          <p>Value: <span id="badkamervalue"></span></p></li>
-
-
-                      <li>tuin            <input type="range" min="1" max="100" value="0" class="slider" id="tuin">
-                          <p>Value: <span id="tuinvalue"></span></p></li>
+                    <li>badkamer <input type="range" min="1" max="100" value="0" class="slider" id="badkamer">
+                        <p>Value: <span id="badkamervalue"></span></p></li>
 
 
-                      <li>prijs            <input type="range" min="1" max="100" value="0" class="slider" id="prijs">
-                          <p>Value: <span id="prijsvalue"></span></p></li>
-                      <li>ligging             <input type="range" min="1" max="100" value="0" class="slider" id="ligging">
-                          <p>Value: <span id="liggingvalue"></span></p></li>
-                      <li>oppervlakte            <input type="range" min="1" max="100" value="0" class="slider" id="oppervlakte">
-                          <p>Value: <span id="oppervlaktevalue"></span></p></li>
-                  </ul>
+                    <li>tuin <input type="range" min="1" max="100" value="0" class="slider" id="tuin">
+                        <p>Value: <span id="tuinvalue"></span></p></li>
 
 
-                      <form method="POST" action="/" class="chatbox">
-                          <input type="hidden" name="id" value="<%= person.id %>">
-                          <label for="bericht">notities
-                              <textarea id="bericht" required name="bericht">
-</textarea>
-                          </label>
-                          <button type="submit">laat je notite achter</button>
-
-                      </form>
-                  <section>
-                      <h2 class="">Hier zie je uw berichten</h2>
-                      <ul class="output">
-                          <% messages.forEach(message =>{ %>
-                              <li><%= message %></li>
-                          <% }) %>
-                      </ul>
-                  </section>
-
-              </section>
-          </div>
+                    <li>prijs <input type="range" min="1" max="100" value="0" class="slider" id="prijs">
+                        <p>Value: <span id="prijsvalue"></span></p></li>
+                    <li>ligging <input type="range" min="1" max="100" value="0" class="slider" id="ligging">
+                        <p>Value: <span id="liggingvalue"></span></p></li>
+                    <li>oppervlakte <input type="range" min="1" max="100" value="0" class="slider" id="oppervlakte">
+                        <p>Value: <span id="oppervlaktevalue"></span></p></li>
+                </ul>
 
 
-        <% }) %>
+                <form method="POST" action="/" class="chatbox">
+                    <input type="hidden" name="id" value="<%= person.id %>">
+                    <label for="bericht">notities
+                        <textarea id="bericht" required name="bericht"></textarea>
+                    </label>
+                    <button type="submit">laat je notite achter</button>
 
+                </form>
 
+                    <h2 class="">Hier zie je uw berichten</h2>
+                    <ul class="output">
+                        <% messages.forEach(message =>{ %>
+                            <li><%= message %></li>
+                        <% }) %>
+                    </ul>
 
-        </ul>
+            </section>
+        </div>
+
+    <% }) %>
+
+    </ul>
     </div>
 
     </div>
-
 
 
 </main>
