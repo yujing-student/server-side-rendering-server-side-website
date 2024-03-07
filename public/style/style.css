@@ -136,3 +136,29 @@ a:hover {
     grid-column: 1;
   }
 }
+@media only screen and (min-width: 1050px) {
+  .list-houses{
+    display: grid;
+    grid-auto-columns: 20em 20em;
+  }
+  .ul-one{
+    grid-column: 1;
+  }
+  .ul-two{
+    grid-column: 2;
+  }
+  .grid-items-house {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-columns: auto auto;
+
+
+  }
+  .item{
+    grid-column: 2;
+  }
+  .itemone{
+    grid-auto-columns: auto;
+    grid-column: 1;
+  }
+}

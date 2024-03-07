@@ -7,8 +7,6 @@
     <!--    https://developer.mozilla.org/en-US/docs/Web/API/Window/location-->
     <!--    https://www.w3schools.com/js/js_window_location.asp-->
     <section class="filter-section">
-        <h2>bewaarde huizen</h2>
-
         <form action="/" method="get" class="zoekvak">
             <label for="city" class="white-text">zoek op plaatsnaam
                 <input type="search" name="city" class="">
@@ -54,7 +52,7 @@
     <% persons.forEach(person => { %>
 
         <section class="list-houses">
-            <h2>bewaarde huizen</h2>
+<!--            <h2>bewaarde huizen</h2>-->
             <ul class="ul-one">
                 <li class="itemone"><img class="image-size"
                                          src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>"
