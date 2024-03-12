@@ -1,0 +1,80 @@
+<%- include('./partials/head-detail') %>
+<main class="">
+
+    <!--    / is om terug te gaan naar de homepagina-->
+
+
+        <section class="">
+            <ul class="detailpage-list-house">
+                <li><img class="image-size" src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
+                         alt="image house">
+                </li>
+
+                <li class="adres"><%= house.street %><%= house.house_nr %></li>
+                <li class="postcode"><%= house.postal_code %> <%= house.city %></li>
+                <li class="wonen"><span><%= house.m2 %><img src="/assets/icons/wonen.svg" alt="wonen icoon"> wonen</span>
+                    <span class="tuin"><%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> perceel</span>
+                   <span class="kamers">
+                       <%= house.rooms %> <img src="/assets/icons/bed.svg" alt="bed icoon">
+                    kamers</span>  </li>
+                <li class="price">&euro; <%= house.price %> kk</li>
+                </ul>
+        </section>
+    <section class="description">
+        <h2>Beschrijving</h2>
+        <p><%- house.description %></p>
+        <button type="button" class="button-notes">log in om score te geven</button>
+    </section>
+    <section class="detailpage-hide-notes">
+
+        <h2 class="h2-score">score</h2>
+
+        <ul class="grid-scores padding-score">
+            <li class="algemeen score-range">algmeen
+                <input type="range" min="1" max="10" value="" class="slider" id="myRange">
+                <p>score: <span id="demo"></span></p></li>
+            <li class="keuken score-range">keuken <input type="range" min="1" max="10" value="0" class="slider" id="keuken">
+                <p>score: <span id="keukenvalue"></span></p></li>
+
+            <li class="score-range">badkamer <input type="range" min="1" max="10" value="0" class="slider" id="badkamer">
+                <p>score: <span id="badkamervalue"></span></p></li>
+
+
+            <li class="score-range">tuin <input type="range" min="1" max="10" value="0" class="slider" id="tuin">
+                <p>score: <span id="tuinvalue"></span></p></li>
+
+
+            <li class="score-range">prijs <input type="range" min="1" max="10" value="0" class="slider" id="prijs">
+                <p>score: <span id="prijsvalue"></span></p></li>
+            <li class="score-range">ligging <input type="range" min="1" max="10" value="0" class="slider" id="ligging">
+                <p>score: <span id="liggingvalue"></span></p></li>
+            <li class="score-range">oppervlakte <input type="range" min="1" max="10" value="0" class="slider" id="oppervlakte">
+                <p>score: <span id="oppervlaktevalue"></span></p></li>
+        </ul>
+
+
+        <h2 class="berichten-score">notities</h2>
+        <form method="POST" action="/" class="chatbox">
+            <input type="hidden" name="id" value="<%= house.id %>">
+            <label for="bericht">
+                <textarea id="bericht" required name="bericht"></textarea>
+            </label>
+            <button type="submit" class="button-notes">laat je notite achter</button>
+
+        </form>
+
+        <h2 class="berichten-score">Hier zie je uw berichten</h2>
+        <ul class="output padding-score">
+            <% messages.forEach(message =>{ %>
+                <li class="message"><%= message %></li>
+            <% }) %>
+        </ul>
+    </section>
+
+
+
+</main>
+<%- include('./partials/foot') %>
+
+
+

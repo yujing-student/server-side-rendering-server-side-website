@@ -1,0 +1,251 @@
+@font-face {
+  font-family: "proximanova";
+  src: url("public/assets/font/ProximaNova-Regular_2607783814.otf");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  font-family: proximanova, sans-serif;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*https://brand.funda.nl/d/d9gw4zTPqYFU/brand-guide?#/basics-1/kleur*/
+/*general*/
+:root {
+  --blue: #0042B3; /*huisstijl #0071B3 orgineel*/
+  --white: #ffffff;
+  --orange: #F7A100;
+  --black: #333333;
+
+  --margin-input-fields: 0 0 1em 0;
+  --margin-2-em:2em;
+}
+
+
+header {
+  background-color: var(--orange
+  );
+  position: relative;
+  color: var(--black);
+
+}
+.log-funda {
+  width: 150px;
+
+}
+.menu-ul,.menu-ul-second{
+  display: none;
+}
+
+.menu-ul-open{
+  display: block;
+  margin: 1em 0 0 0;
+}
+.menu-ul-second-open{
+  margin: -1em 0 0 0;
+
+}
+.header-menu-open{
+  height: 15em;
+}
+.hamburger-icon {
+  position: relative;
+  left: 2em;
+  background-color: var(--orange);
+  top:-1em;
+  /*background-color: var(--white);*/
+}
+.login-button{
+  background-color: var(--orange);
+}
+.iconlogin{
+  margin-bottom: 2em;
+}
+
+.hamburger-icon:hover {
+  background-color: var(--blue);
+}
+
+.menu-link {
+  color: var(--black);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+.image-size{
+  width: 200px;
+}
+
+
+
+/*detailpage*/
+
+.detailpage-list-house{
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 8px;
+}
+
+.tuin,.kamers{
+  margin-left: 0.5em;
+}
+.price{
+  font-size: 1.3em;
+}
+.detailpage-hide-notes{
+  margin-left: 2em;
+  display: none;
+}
+
+
+.hide-notes-open{
+  display: block;
+  margin-right: 2em;
+}
+
+
+.detailpage-hide-notes{
+  background-color: #e6f2f7;
+}
+.hide-notes-open{
+  scroll-behavior: smooth;
+}
+.button-notes{
+  background-color: var(--orange);
+  font-size: 1em;
+}
+.score-range{
+  margin:0 0 3em 0;
+}
+.description{
+  margin-inline:2.4em;
+  border-top: solid #dddddd;
+}
+.h2-score{
+  margin-left: 1.5em;
+  padding-top: 1em;
+}
+.berichten-score{
+  margin-left: 1.6em;
+  margin-top: 2em;
+}
+.chatbox{
+  margin-left: 2.5em;
+}
+
+
+
+li {
+  list-style-type: none;
+}
+
+.output{
+  margin-left: 2em;
+  padding-bottom: 2em;
+}
+.message{
+  list-style: disc;
+}
+
+
+@media only screen and (max-width: 650px) {
+  .menu{
+    background-color: var(--orange
+    );
+  }
+  .log-funda-seoncd{
+    display: none;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+  .iconlogin{
+    margin-bottom: 0em;
+  }
+
+
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 650px) {
+  header {
+    background-color: var(--orange);
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    max-width: 100%;
+    justify-content: space-between;
+    height: 5em;
+  }
+  .log-funda{
+    top:-5px
+  }
+  .menu{
+    margin-left: auto;
+  }
+
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu-ul {
+    display: flex;
+
+
+    row-gap: 1em;
+    flex-direction: row;
+
+  }
+  .header-menu a.log-funda {
+    margin: 0 1em 0 0;
+
+  }
+
+  .li-tems-menu{
+    margin: 0 13px 0 0;
+  }
+  .score-range{
+    margin:0 0 1em 0;
+  }
+
+  .header-menu a.log-funda {
+    margin: 0 2em 0 0;
+  }
+
+  .menu {
+    display: flex;
+  }
+  .hamburger-icon,.log-funda-seoncd{
+    display: none;
+  }
+  .grid-scores{
+    display: grid;
+
+    grid-template-columns: auto auto;
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .grid-scores{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}

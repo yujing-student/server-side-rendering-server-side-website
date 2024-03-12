@@ -1,21 +1,18 @@
 <%- include('./partials/head') %>
 <main class="">
-    <!--    <section>-->
 
-
-    <!--    gebruk maken van dit zodat je geen foreach loop hoeft te gebruiken-->
-    <!--    https://developer.mozilla.org/en-US/docs/Web/API/Window/location-->
-    <!--    https://www.w3schools.com/js/js_window_location.asp-->
     <section class="filter-section">
         <form action="/" method="get" class="zoekvak">
-            <label for="city" class="white-text">zoek op plaatsnaam
+            <label for="city" class="search-tekst">zoek op plaatsnaam
                 <input type="search" name="city" class="">
                 <!--ik zeg nu ga zoeken en als name geef ik mee dat het id is en dat daar op gezocht word-->
             </label>
-            <button type="submit" class="submit-searchbutton styling-filterbutton ">zoeken</button>
+            <button type="submit" class="styling-searchbutton">zoeken</button>
         </form>
 
-        <p class="">Gebruik de zoekfunctie om de stad op te zoeken let erop dat alles staat zoals in de database</p>
+        <p class="">
+            Gebruik de zoekfunctie om de stad op te zoeken let erop dat alles
+            staat zoals in de database</p>
 
         <% datahouse.forEach(function(person)
 
@@ -49,76 +46,45 @@
 
     </section>
 
-    <% persons.forEach(person => { %>
-
-        <section class="list-houses">
-<!--            <h2>bewaarde huizen</h2>-->
-            <ul class="ul-one">
-                <li class="itemone"><img class="image-size"
-                                         src="https://fdnd-agency.directus.app/assets/<%= person.poster_image %>"
-                                         alt="image house"></li>
-            </ul>
-
-            <ul class="grid-items-house ul-two">
-
-                <li class="item"><a href="./person/<%= person.id %>"><%= person.street %><%= person.house_nr %></a></li>
-                <li class="item"><%= person.postal_code %> <%= person.city %></li>
-                <li class="beschrijving item"><%= person.price %> kk</li>
-                <li class="item"><%= person.m2 %> oppperavlakte <%= person.rooms %> kamers</li>
-                <li class="item">
-                    <button type="button" class="button-notes">mijn notities</button>
-                </li>
-
-            </ul>
-
-            <section class="hide-notes">
-
-                <h2>score</h2>
-
-                <ul>
-                    <li>algmeen
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        <p>Value: <span id="demo"></span></p></li>
-                    <li>keuken <input type="range" min="1" max="100" value="0" class="slider" id="keuken">
-                        <p>Value: <span id="keukenvalue"></span></p></li>
-
-                    <li>badkamer <input type="range" min="1" max="100" value="0" class="slider" id="badkamer">
-                        <p>Value: <span id="badkamervalue"></span></p></li>
 
 
-                    <li>tuin <input type="range" min="1" max="100" value="0" class="slider" id="tuin">
-                        <p>Value: <span id="tuinvalue"></span></p></li>
+    <div class="list-houses">
+        <% houses.forEach(house => { %>
+            <article class="">
 
+                <ul class="grid-items-house">
+                    <li class="">       <img class="image-size"
+                                             src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
+                                             alt="image house"></li>
+                    <li class=""><a href="./Detailpage/<%= house.id %>"><%= house.street %><%= house.house_nr %></a></li>
+                    <li class=""><%= house.postal_code %> <%= house.city %></li>
+                    <li class="wonen">
+                        <span class="icons-house"><%= house.m2 %><img src="/assets/icons/wonen.svg" alt="wonen icoon"> </span>
+                        <span class="icons-house"><%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> </span>
+                        <span class="icons-house"><%= house.rooms %> <img src="/assets/icons/bed.svg" alt="bed icoon"></span>
+                    </li>
+                    <li class="beschrijving item">&euro; <%= house.price %> kk</li>
 
-                    <li>prijs <input type="range" min="1" max="100" value="0" class="slider" id="prijs">
-                        <p>Value: <span id="prijsvalue"></span></p></li>
-                    <li>ligging <input type="range" min="1" max="100" value="0" class="slider" id="ligging">
-                        <p>Value: <span id="liggingvalue"></span></p></li>
-                    <li>oppervlakte <input type="range" min="1" max="100" value="0" class="slider" id="oppervlakte">
-                        <p>Value: <span id="oppervlaktevalue"></span></p></li>
+                    <li class=""><%= house.agent %></li>
+                    <li class=""><button type="button"> <a href="favorite-list/">
+                                <img src="assets/icons/heart.svg"
+
+                                     alt="like button">
+                            </a>
+                        </button>
+                    </li>
+
                 </ul>
 
 
-                <form method="POST" action="/" class="chatbox">
-                    <input type="hidden" name="id" value="<%= person.id %>">
-                    <label for="bericht">notities
-                        <textarea id="bericht" required name="bericht"></textarea>
-                    </label>
-                    <button type="submit">laat je notite achter</button>
+            </article>
 
-                </form>
 
-                <h2 class="">Hier zie je uw berichten</h2>
-                <ul class="output">
-                    <% messages.forEach(message =>{ %>
-                        <li><%= message %></li>
-                    <% }) %>
-                </ul>
 
-            </section>
-        </section>
+        <% }) %>
+    </div>
 
-    <% }) %>
+
 
 </main>
 <%- include('./partials/foot') %>
