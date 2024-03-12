@@ -10,3 +10,10 @@ function ShowHamburgerMenu () {/*hamburger menu*/
     });
 }
 ShowHamburgerMenu();
+
+
+const favoriteButton = document.getElementsByClassName(".favoriteButton");
+favoriteButton.addEventListener("click", () => {
+    // Your code to handle the click event (e.g., navigate to a page)
+    window.location.href = "favorite-list/"; // Replace with your desired URL
+});

@@ -5,12 +5,15 @@
 
 
         <section class="">
-            <ul class="detailpage-list-house">
-                <li><img class="image-size" src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
-                         alt="image house">
-                </li>
 
-                <li class="adres"><%= house.street %> <%= house.house_nr %></li>
+
+<!--                <li>-->
+<!--                </li>-->
+            <img class="image-size" src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
+                 alt="image house">
+                <h1 class="address-h1"><%= house.street %> <%= house.house_nr %></h1>
+
+            <ul class="detailpage-list-house">
                 <li class="postcode"> <%= house.postal_code %> <%= house.city %></li>
                 <li class="wonen"><span><%= house.m2 %> <img src="/assets/icons/wonen.svg" alt="wonen icoon"> wonen</span>
                     <span class="tuin"> <%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> perceel</span>

@@ -240,6 +240,11 @@ li {
   }
   .image-size{
     width: 500px;
+    margin-inline: 2.1em;
+    margin-top: 2em;
+  }
+  .address-h1{
+    margin-inline: 1.5em;
   }
 }
 
