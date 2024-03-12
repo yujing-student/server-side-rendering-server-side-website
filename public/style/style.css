@@ -140,10 +140,7 @@ article {
 li {
   list-style-type: none;
 }
-.heart{
-  margin: 2em 0 0 0 ;
 
-}
 @media only screen and (min-width: 650px) {
   header {
     background-color: var(--orange);
@@ -196,26 +193,27 @@ li {
 }
 .list-houses {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));/*iedere keer word er een colum toegevoegd van 300px en blijft er een ruimte van 1fr over*/
   grid-gap: 44px;
-  /*margin-right: 2em;*/
-  /*margin-left: 2em;*/
   border-top: solid #dddddd;
   margin: 2em 2em 0 2em;
 }
 
 .grid-items-house {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   row-gap: 6px;
-  flex-direction: column;
 }
 .grid-items-house li {
   display: flex;
-  flex: 1;
-  align-items: center; 
-  min-height: 22px;
+  flex-wrap: wrap;
+  align-items: center;
 }
+.heart {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
 
 
 @media (min-width: 1000px) {
