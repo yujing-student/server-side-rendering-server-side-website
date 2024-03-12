@@ -157,23 +157,21 @@ li {
 .message{
   list-style: disc;
 }
-
+.menu{
+  background-color: var(--orange
+  );
+  display: flex;
+  align-items: center;
+}
+.log-funda-seoncd{
+  display: none;
+}
+.iconlogin{
+  margin-bottom: 0em;
+}
 
 @media only screen and (max-width: 650px) {
-  .menu{
-    background-color: var(--orange
-    );
-  }
-  .log-funda-seoncd{
-    display: none;
-  }
-  .menu {
-    display: flex;
-    align-items: center;
-  }
-  .iconlogin{
-    margin-bottom: 0em;
-  }
+
 
 
 }
@@ -239,6 +237,9 @@ li {
     display: grid;
 
     grid-template-columns: auto auto;
+  }
+  .image-size{
+    width: 500px;
   }
 }
 

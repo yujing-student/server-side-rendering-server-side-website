@@ -10,10 +10,10 @@
                          alt="image house">
                 </li>
 
-                <li class="adres"><%= house.street %><%= house.house_nr %></li>
-                <li class="postcode"><%= house.postal_code %> <%= house.city %></li>
-                <li class="wonen"><span><%= house.m2 %><img src="/assets/icons/wonen.svg" alt="wonen icoon"> wonen</span>
-                    <span class="tuin"><%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> perceel</span>
+                <li class="adres"><%= house.street %> <%= house.house_nr %></li>
+                <li class="postcode"> <%= house.postal_code %> <%= house.city %></li>
+                <li class="wonen"><span><%= house.m2 %> <img src="/assets/icons/wonen.svg" alt="wonen icoon"> wonen</span>
+                    <span class="tuin"> <%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> perceel</span>
                    <span class="kamers">
                        <%= house.rooms %> <img src="/assets/icons/bed.svg" alt="bed icoon">
                     kamers</span>  </li>
