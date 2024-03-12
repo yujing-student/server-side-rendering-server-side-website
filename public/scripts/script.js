@@ -12,8 +12,17 @@ function ShowHamburgerMenu () {/*hamburger menu*/
 ShowHamburgerMenu();
 
 
-const favoriteButton = document.getElementsByClassName(".favoriteButton");
-favoriteButton.addEventListener("click", () => {
-    // Your code to handle the click event (e.g., navigate to a page)
-    window.location.href = "favorite-list/"; // Replace with your desired URL
-});
+
+function t () {/*hamburger menu*/
+    const favoriteButton = document.getElementsByClassName("favoriteButton");
+    if (favoriteButton.length > 0) {
+        favoriteButton[0].addEventListener("click", () => {
+            // ... your click event handling code
+            window.location.href = "favorite-list/"; // Replace with your desired URL
+        });
+    } else {
+        console.error("No elements with class 'favoriteButton' found.");
+    }
+
+}
+t();
