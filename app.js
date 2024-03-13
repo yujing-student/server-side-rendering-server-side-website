@@ -74,7 +74,7 @@ app.post('/', function (request, response) {
 
 app.get('/Detailpage/:id', function (request, response) {
     const id = request.params.id
-    fetchJson(`https://fdnd-agency.directus.app/items/f_houses/${id}`)
+    fetchJson(`https://fdnd-agency.directus.app/items/f_houses/${id}/?fields=*.*.*`)
 
 
         .then((apiData) => {

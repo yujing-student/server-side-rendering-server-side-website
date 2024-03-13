@@ -86,8 +86,18 @@ a:hover {
 .image-size{
   width: 200px;
 }
-
-
+.image-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 10px;
+  max-width: 888px;
+ }
+.houses-images{
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  aspect-ratio: 1/1;
+}
 
 /*detailpage*/
 
@@ -245,6 +255,16 @@ li {
   }
   .address-h1{
     margin-inline: 1.5em;
+  }
+
+  .houses-images{
+    object-fit: cover;
+    height: 350px;
+    width: 350px;
+    aspect-ratio: 1/1;
+  }
+  .image-grid{
+    max-width: 1400px;
   }
 }
 

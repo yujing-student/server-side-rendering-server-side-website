@@ -4,10 +4,16 @@
     <!--    / is om terug te gaan naar de homepagina-->
 
 
-        <section class="">
-            <img class="image-size" src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
-                 alt="image house">
+   <div class="image-grid">
+<!--       <img class="image-size" src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"-->
+<!--            alt="image house">-->
+<!--       dit werkt niet meer-->
+       <% house.gallery.forEach(image =>{%>
+           <img src="https://fdnd-agency.directus.app/assets/<%= image.directus_files_id.id%>" class="houses-images" alt="images houses">
+       <%})%>
+   </div>
 
+    <section class="">
                 <h1 class="address-h1"><%= house.street %> <%= house.house_nr %></h1>
 
 
