@@ -44,6 +44,9 @@ druk je op de link dan opent die de pagina
 
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+je moet node js hebben geinstaleerd wil je hiermee werken
+
+<a href="https://nodejs.org/docs/latest/api/">documentatie over node js</a>
 Je drukt op de groene knop code en dan kan je de code downloaden als je
 in de terminal npm start doet dan moet je dit kunnen zien
 
@@ -53,6 +56,12 @@ druk je op de link dan opent die de pagina
 ook kan je deze repository forken en dan kan je in je eigen repository verder werken 
 
 ## Bronnen
+<p>deze bronnen heb ik gebruikt om deze pagina te realiseren</p>
+<ul>
+<li><a href="https://ejs.co/">ejs documentatie</a></li>
+<li><a href="https://expressjs.com/">express documentatie</a></li>
+<li><a href="https://nodejs.org/docs/latest/api/">node js documentatie</a></li>
+</ul>
 
 ## Licentie
 
