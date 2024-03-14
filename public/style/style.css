@@ -1,246 +1,259 @@
 @font-face {
-  font-family: "proximanova";
-  src: url("public/assets/font/ProximaNova-Regular_2607783814.otf");
+    font-family: "proximanova";
+    src: url("public/assets/font/ProximaNova-Regular_2607783814.otf");
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0 auto;
-  font-family: proximanova, sans-serif;
-  width: 100%;
+    margin: 0 auto;
+    font-family: proximanova, sans-serif;
+    width: 100%;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*https://brand.funda.nl/d/d9gw4zTPqYFU/brand-guide?#/basics-1/kleur*/
 /*general*/
 :root {
-  --blue: #0042B3; /*huisstijl #0071B3 orgineel*/
-  --white: #ffffff;
-  --orange: #F7A100;
-  --black: #333333;
+    --blue: #0042B3; /*huisstijl #0071B3 orgineel*/
+    --white: #ffffff;
+    --orange: #F7A100;
+    --black: #333333;
 
-  --margin-input-fields: 0 0 1em 0;
-  --margin-2-em: 2em;
+    --margin-input-fields: 0 0 1em 0;
+    --margin-2-em: 2em;
 }
 
 
 header {
-  background-color: var(--orange
-  );
-  position: relative;
-  color: var(--black);
+    background-color: var(--orange
+    );
+    position: relative;
+    color: var(--black);
 
 }
 
 .log-funda {
-  width: 150px;
+    width: 150px;
 
 }
 
 .menu-ul, .menu-ul-second {
-  display: none;
+    display: none;
 }
 
 .menu-ul-open {
-  display: block;
-  margin: 1em 0 0 0;
+    display: block;
+    margin: 1em 0 0 0;
 }
 
 .menu-ul-second-open {
 
-  margin: -1em 0 0 0;
+    margin: -1em 0 0 0;
 }
 
 .header-menu-open {
-  height: 15em;
+    height: 15em;
 }
 
 .menu {
-  background-color: var(--orange
-  );
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background-color: var(--orange
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .hamburger-icon {
-  position: relative;
-  left: 2em;
-  background-color: var(--orange);
-  top:-1em;
-  border: none;
+    position: relative;
+    left: 2em;
+    background-color: var(--orange);
+    top: -1em;
+    border: none;
 }
 
 
 .login-button {
-  background-color: var(--orange);
+    background-color: var(--orange);
 }
-.iconlogin{
-  margin-bottom: 2em;
+
+.iconlogin {
+    margin-bottom: 2em;
 }
 
 .hamburger-icon:hover {
-  background-color: var(--blue);
-  border: none;
+    background-color: var(--blue);
+    border: none;
 }
 
 .menu-link {
-  color: var(--black);
-  text-decoration: none;
+    color: var(--black);
+    text-decoration: none;
 }
 
 
 a:hover {
-  text-decoration-line: underline;
+    text-decoration-line: underline;
 }
 
 .filter-section {
 
-  margin: 2em 0 0 2em;
-  max-width: 29em;
+    margin: 2em 0 0 2em;
+    max-width: 29em;
 
 }
-.styling-searchbutton{
-  background-color: var(--orange);
-  border: none;
-  font-size: 1.2em;
+
+.styling-searchbutton {
+    background-color: var(--orange);
+    border: none;
+    font-size: 1.2em;
 
 }
-#filters{
-  font-size: 0.9em;
+
+#filters {
+    font-size: 0.9em;
 }
+
 article {
-  border: 1px solid #ddd;
-  margin: 1em 2em 0 0;
-  max-width: 21em;
+    border: 1px solid #ddd;
+    margin: 1em 2em 0 0;
+    max-width: 21em;
 
 
 }
-.link-to-detail{
-  text-decoration-line: none;
-  font-size: 1.2em;
-  color: var(--blue);
+
+.link-to-detail {
+    text-decoration-line: none;
+    font-size: 1.2em;
+    color: var(--blue);
 }
-.favoriteButton{
-  background-color: transparent;
-  border: none;
-  margin-inline: -0.7em;
+
+.favoriteButton {
+    background-color: transparent;
+    border: none;
+    margin-inline: -0.7em;
 }
-.heart-image{
-  /*font-size: 1em;*/
-  width: 2.4em;
+
+.heart-image {
+    /*font-size: 1em;*/
+    width: 2.4em;
 }
+
 .image-size {
-  width: 230px;
+    width: 230px;
 }
 
 .wonen {
-  /*margin-top: 0.5em;*/
-  margin: 0.5em 0 0 0;
+    /*margin-top: 0.5em;*/
+    margin: 0.5em 0 0 0;
 
 }
 
 .icons-house {
-  margin: 0 0.8em 0 0;
-  font-size:1.1em;
+    margin: 0 0.8em 0 0;
+    font-size: 1.1em;
 }
+
 .grid-items-house {
-  display: grid;
-  row-gap: 6px;
-  max-width: 16em;
+    display: grid;
+    row-gap: 6px;
+    max-width: 16em;
 }
 
 .beschrijving {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 @media only screen and (min-width: 650px) {
-  header {
-    background-color: var(--orange);
-    display: flex;
-    align-items: center;
-    color: var(--black);
-    max-width: 100%;
-    justify-content: space-between;
-    height: 5em;
-  }
+    header {
+        background-color: var(--orange);
+        display: flex;
+        align-items: center;
+        color: var(--black);
+        max-width: 100%;
+        justify-content: space-between;
+        height: 5em;
+    }
 
-  .log-funda {
-    top: -5px
-  }
-  .iconlogin{
-    margin-bottom: 0em;
-  }
+    .log-funda {
+        top: -5px
+    }
 
-  .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .iconlogin {
+        margin-bottom: 0em;
+    }
 
-  .menu-ul {
-    display: flex;
-    row-gap: 1em;
-    flex-direction: row;
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  }
+    .menu-ul {
+        display: flex;
+        row-gap: 1em;
+        flex-direction: row;
 
-  .header-menu a.log-funda {
-    margin-right: 1em;
-  }
+    }
 
-  .li-tems-menu {
-    margin-right: 1em;
-  }
+    .header-menu a.log-funda {
+        margin-right: 1em;
+    }
 
-  a.log-funda {
-    margin-right: 2em;
-  }
+    .li-tems-menu {
+        margin-right: 1em;
+    }
 
-  .hamburger-icon {
-    display: none;
-  }
+    a.log-funda {
+        margin-right: 2em;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
 }
-.search-tekst{
-  font-size: 1.4em;
+
+.search-tekst {
+    font-size: 1.4em;
 }
+
 .list-houses {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));/*iedere keer word er een colum toegevoegd van 300px en blijft er een ruimte van 1fr over*/
-  grid-gap: 44px;
-  border-top: solid #dddddd;
-  margin: 2em 2em 0 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*iedere keer word er een colum toegevoegd van 300px en blijft er een ruimte van 1fr over*/
+    grid-gap: 44px;
+    border-top: solid #dddddd;
+    margin: 2em 2em 0 2em;
 }
 
 .grid-items-house {
 
-  max-width: 17em;
+    max-width: 17em;
 }
+
 .grid-items-house li {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
+
 .heart {
-  display: flex;
-  justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
 
 }
-
 
 
 @media (min-width: 1000px) {
-  .list-houses {
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  }
+    .list-houses {
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    }
 }

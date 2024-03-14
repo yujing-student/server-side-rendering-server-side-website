@@ -33,8 +33,8 @@ app.get('/', async function (request, response) {
     // Haal alle personen uit de WHOIS API op
     // hier werkt de zoekfunite niet helemaal zoals gehoopt scroll naar het einde van de pagina
     try {
-        const userQuery =  request.query; /*dit is het id wat de gebruiker ingeeft bij het zoekvak en die word opgelsagen in een vairable en qeury gebruik je omdat dit een zoekopdracht is*/
-        const filterHouses =  allData_houses.data.filter((informationHouses) => { /*dit is een array met daarin de filter waarin de gegevens van een specifieke student staan*/
+        const userQuery = request.query; /*dit is het id wat de gebruiker ingeeft bij het zoekvak en die word opgelsagen in een vairable en qeury gebruik je omdat dit een zoekopdracht is*/
+        const filterHouses = allData_houses.data.filter((informationHouses) => { /*dit is een array met daarin de filter waarin de gegevens van een specifieke student staan*/
             let true_or_false;/*deze waarden is leeg omdat dit true of false moet returen */
             let isValid = true;
             for (let key in userQuery) {
@@ -48,8 +48,8 @@ app.get('/', async function (request, response) {
 
         response.render('index', {
             datahouse: filterHouses,
-            messages:messages,
-            houses:allData_houses.data
+            messages: messages,
+            houses: allData_houses.data
             // persons: allData_houses.data,filteredimagesfirst/*hier zeg ik dat iedereen getoond moet worden*/
         });
         // https://dev.to/callmefarad/simple-query-search-in-node-express-api-4c0e
@@ -66,7 +66,7 @@ app.post('/', function (request, response) {
 
 
     // gebruik maken van house zodat je de data kan oproepen
-    response.redirect('/Detailpage/'+request.body.id);/*het bericht moet weergegeven worden op deze pagina daarom is er een request*/
+    response.redirect('/Detailpage/' + request.body.id);/*het bericht moet weergegeven worden op deze pagina daarom is er een request*/
 
 })
 // `/Detailpage/${request.params.id}`
@@ -80,10 +80,12 @@ app.get('/Detailpage/:id', function (request, response) {
         .then((apiData) => {
             // request.params.id gebruik je zodat je de exacte student kan weergeven dit si een routeparmater naar de route van die persoon
             if (apiData.data) {/*als data voer dan dit uit */
-                console.log('data bestaat u gaat nu naar de Detailpage page'+JSON.stringify(apiData))
+                console.log('data bestaat u gaat nu naar de Detailpage page' + JSON.stringify(apiData))
                 // info gebruiken om die te linken aan apidata.data
-                response.render('Detailpage', {house: apiData.data, images:
-                    favorite_houses.data, messages: messages});
+                response.render('Detailpage', {
+                    house: apiData.data, images:
+                    favorite_houses.data, messages: messages
+                });
                 //     messages moet uitgevoerd worden met de meegegeven array
 
 
@@ -106,11 +108,10 @@ app.post('/Detailpage/:id/', function (request, response) {
         .then((patchresponse) => {
             // voer dit uit
             console.log(patchresponse);
-            response.redirect(303, '/Detailpage/'+request.params.id)
+            response.redirect(303, '/Detailpage/' + request.params.id)
         })
 
 })
-
 
 
 app.get('/favorite-list', function (request, response) {
@@ -139,10 +140,11 @@ app.get('/favorite-list', function (request, response) {
                         // info gebruiken om die te linken aan apidata.data
 
 
-                        response.render('favorite-list', { favorite_houses:
+                        response.render('favorite-list', {
+                            favorite_houses:
                             favorite_houses.data,
-                            allhouses:allData_houses.data,
-                            numberssaved:flatNummers
+                            allhouses: allData_houses.data,
+                            numberssaved: flatNummers
                         });
                     } else {
                         console.log("No favorite houses found.");

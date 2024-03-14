@@ -47,31 +47,36 @@
     </section>
 
 
-
     <div class="list-houses">
         <% houses.forEach(house => { %>
             <article class="">
 
                 <ul class="grid-items-house">
-                    <li class="">       <img class="image-size"
-                                             src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
-                                             alt="image house"></li>
-                    <li class=""><a class="link-to-detail" href="./Detailpage/<%= house.id %>"><%= house.street %><%= house.house_nr %></a></li>
+                    <li class=""><img class="image-size"
+                                      src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
+                                      alt="image house"></li>
+                    <li class=""><a class="link-to-detail"
+                                    href="./Detailpage/<%= house.id %>"><%= house.street %><%= house.house_nr %></a>
+                    </li>
                     <li class=""><%= house.postal_code %> <%= house.city %></li>
                     <li class="wonen">
                         <span class="icons-house"><%= house.m2 %> <img src="/assets/icons/wonen.svg" alt="wonen icoon"> </span>
-                        <span class="icons-house"><%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> </span>
-                        <span class="icons-house"><%= house.rooms %> <img src="/assets/icons/bed.svg" alt="bed icoon"></span>
+                        <span class="icons-house"><%= house.m2_garden %> <img src="/assets/icons/perceel.svg"
+                                                                              alt="perceel icoon"> </span>
+                        <span class="icons-house"><%= house.rooms %> <img src="/assets/icons/bed.svg"
+                                                                          alt="bed icoon"></span>
                     </li>
                     <li class="beschrijving item">&euro; <%= house.price %> kk</li>
 
                     <li class="agen-description"><%= house.agent %></li>
-                    <li class="heart"><a href="/favorite-list"> <button type="button" class="favoriteButton">
+                    <li class="heart"><a href="/favorite-list">
+                            <button type="button" class="favoriteButton">
                                 <img class="heart-image" src="assets/icons/heart.svg"
 
                                      alt="like button">
 
-                        </button></a>
+                            </button>
+                        </a>
                     </li>
 
                 </ul>
@@ -79,11 +84,8 @@
 
             </article>
 
-
-
         <% }) %>
     </div>
-
 
 
 </main>

@@ -1,6 +1,6 @@
 <%- include('./partials/head-favorite') %>
 <main class="">
-<section class="favorite-section-search">
+    <section class="favorite-section-search">
 
         <form action="/" method="get" class="zoekvak">
             <label for="city" class="search-tekst">zoek op plaatsnaam
@@ -11,7 +11,6 @@
         </form>
 
         <p class="">Gebruik de zoekfunctie om de stad op te zoeken let erop dat alles staat zoals in de database</p>
-
 
 
         <label for="filters">kies waar je op wilt filteren:</label>
@@ -27,35 +26,36 @@
     <section class="second-section-database">
         <h2>uw huizen lijsten</h2>
 
-    <ul class="grid-infomarition">
+        <ul class="grid-infomarition">
 
+            <% favorite_houses.forEach(house => { %>
+                <li class="list border-top">de title van de lijst van uw favoriten huis :<%= house.title %></li>
+                <li class="list">omschrijving van uw favoriten huis :<%= house.description %></li>
+                <li class="list border-bottom">dit zijn uw huizen :<%= house.houses %></li>
+            <% }) %>
+        </ul>
 
-    <% favorite_houses.forEach(house => { %>
-        <li class="list border-top">de title van de lijst van uw favoriten huis :<%= house.title %></li>
-        <li class="list">omschrijving van uw favoriten huis :<%= house.description %></li>
-        <li class="list border-bottom">dit zijn uw huizen :<%= house.houses %></li>
-    <% }) %>
-    </ul>
+        <h3 class="houses-saved-border-top">hier staan uw huizen</h3>
 
-    <h3 class="houses-saved-border-top">hier staan uw huizen</h3>
-
-    <% const limitedHouses = allhouses.slice(0, 7); %>
-
+        <% const limitedHouses = allhouses.slice(0, 7); %>
 
         <div class="styling-houses">
-<!--            zonder deze div kan er niet gestyled worden voor desktop formaat dus de blokejs-->
+            <!--            zonder deze div kan er niet gestyled worden voor desktop formaat dus de blokejs-->
 
             <% limitedHouses.forEach(savedhouses => { %>
-        <article>
-            <ul class="favorte-houses"><%if (savedhouses == numberssaved)%>
-                <li class="house"> <img class="image-size"
-                                           src="https://fdnd-agency.directus.app/assets/<%= savedhouses.poster_image %>"
-                                           alt="image house"></li>
-                <li class="house"><a href="/Detailpage/<%= savedhouses.id %>"><%= savedhouses.street %><%= savedhouses.house_nr %></a></li>
-                <li class="house"><%= savedhouses.postal_code %> <%= savedhouses.city %></li>
-                <li class="house price">&euro; <%= savedhouses.price %></li>
-            </ul>
-        </article>
+                <article>
+                    <ul class="favorte-houses">
+                        <% if (savedhouses == numberssaved) %>
+                        <li class="house"><img class="image-size"
+                                               src="https://fdnd-agency.directus.app/assets/<%= savedhouses.poster_image %>"
+                                               alt="image house"></li>
+                        <li class="house"><a
+                                    href="/Detailpage/<%= savedhouses.id %>"><%= savedhouses.street %><%= savedhouses.house_nr %></a>
+                        </li>
+                        <li class="house"><%= savedhouses.postal_code %> <%= savedhouses.city %></li>
+                        <li class="house price">&euro; <%= savedhouses.price %></li>
+                    </ul>
+                </article>
             <% }) %>
         </div>
     </section>
