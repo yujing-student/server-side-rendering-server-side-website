@@ -73,8 +73,10 @@ header {
   position: relative;
   left: 2em;
   background-color: var(--orange);
-  top:-1em
+  top:-1em;
+  border: none;
 }
+
 
 .login-button {
   background-color: var(--orange);
@@ -85,6 +87,7 @@ header {
 
 .hamburger-icon:hover {
   background-color: var(--blue);
+  border: none;
 }
 
 .menu-link {
@@ -94,13 +97,13 @@ header {
 
 
 a:hover {
-
   text-decoration-line: underline;
 }
 
 .filter-section {
 
   margin: 2em 0 0 2em;
+  max-width: 29em;
 
 }
 .styling-searchbutton{
@@ -115,11 +118,24 @@ a:hover {
 article {
   border: 1px solid #ddd;
   margin: 1em 2em 0 0;
+  max-width: 21em;
 
 
 }
-
-
+.link-to-detail{
+  text-decoration-line: none;
+  font-size: 1.2em;
+  color: var(--blue);
+}
+.favoriteButton{
+  background-color: transparent;
+  border: none;
+  margin-inline: -0.7em;
+}
+.heart-image{
+  /*font-size: 1em;*/
+  width: 2.4em;
+}
 .image-size {
   width: 230px;
 }
@@ -132,7 +148,7 @@ article {
 
 .icons-house {
   margin: 0 0.8em 0 0;
-  font-size:1.2em;
+  font-size:1.1em;
 }
 .grid-items-house {
   display: grid;
@@ -141,7 +157,7 @@ article {
 }
 
 .beschrijving {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 li {
