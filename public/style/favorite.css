@@ -69,7 +69,11 @@ header {
 .iconlogin{
   margin-bottom: 2em;
 }
+.border-bottom{
+  border-bottom: solid #dddddd;
+  margin-bottom: 3em;
 
+}
 
 .hamburger-icon:hover {
   background-color: var(--blue);
@@ -101,6 +105,13 @@ article{
 li {
   list-style-type: none;
 }
+
+.border-top{
+  /*border-bottom: solid #dddddd;*/
+  margin-top: 1em;
+}
+
+
 @media only screen and (max-width: 650px) {
   .menu{
     background-color: var(--orange
@@ -188,15 +199,12 @@ li {
 
 }
 .styling-searchbutton{
-  font-size: 0.9em;
   background-color: var(--orange);
+  border: none;
+  font-size: 1.2em;
 }
 
-.border-bottom{
-  border-bottom: solid #dddddd;
-  margin:0  2em 2em 0;
-  padding-top: 1em;
-}
+
 .houses-saved-border-top{
   margin:2em 0 0 0.2em;
 }
@@ -214,9 +222,11 @@ li {
 .second-section-database,.favorite-section-search{
   margin:2em 3em 0 2em;
 }
-
-
 .list{
-  margin:0 0 2em 0;
-  list-style-type: disc;
+  line-height: 1.5em;
 }
+.grid-infomarition{
+  margin-left: -2.4em;
+}
+
+

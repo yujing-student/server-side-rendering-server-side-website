@@ -104,8 +104,8 @@ a:hover {
 }
 .styling-searchbutton{
   background-color: var(--orange);
-  /*border-radius: 10px;*/
-  font-size: 0.9em;
+  border: none;
+  font-size: 1.2em;
 
 }
 #filters{
@@ -131,6 +131,7 @@ article {
 
 .icons-house {
   margin: 0 0.8em 0 0;
+  font-size:1.2em;
 }
 
 .beschrijving {

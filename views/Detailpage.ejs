@@ -19,9 +19,10 @@
 
             <ul class="detailpage-list-house">
                 <li class="postcode"> <%= house.postal_code %> <%= house.city %></li>
-                <li class="wonen"><span><%= house.m2 %> <img src="/assets/icons/wonen.svg" alt="wonen icoon"> wonen</span>
-                    <span class="tuin"> <%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> perceel</span>
-                   <span class="kamers">
+                <li class="wonen">
+                    <span class="text-font"><%= house.m2 %> <img src="/assets/icons/wonen.svg" alt="wonen icoon"> wonen</span>
+                    <span class="tuin text-font"> <%= house.m2_garden %> <img src="/assets/icons/perceel.svg" alt="perceel icoon"> perceel</span>
+                   <span class="kamers text-font">
                        <%= house.rooms %> <img src="/assets/icons/bed.svg" alt="bed icoon">
                     kamers</span>  </li>
                 <li class="price">&euro; <%= house.price %> kk</li>
@@ -29,7 +30,7 @@
         </section>
     <section class="description">
         <h2>Beschrijving</h2>
-        <p><%- house.description %></p>
+        <p class="description-text"><%- house.description %></p>
         <button type="button" class="button-notes">log in om score te geven</button>
     </section>
     <section class="detailpage-hide-notes">
@@ -38,25 +39,29 @@
 
         <ul class="grid-scores padding-score">
             <li class="algemeen score-range">algmeen
-                <input type="range" min="1" max="10" value="" class="slider" id="myRange">
-                <p>score: <span id="demo"></span></p></li>
+                <input type="range" min="1" max="10" value="" class="slider" id="myRange"><span class="distance-score">score:</span>
+              <span id="demo"> score: </span></li>
+
             <li class="keuken score-range">keuken <input type="range" min="1" max="10" value="0" class="slider" id="keuken">
-                <p>score: <span id="keukenvalue"></span></p></li>
+                <span class="distance-score">score:</span>
+              <span id="keukenvalue">score:</span></li>
 
             <li class="score-range">badkamer <input type="range" min="1" max="10" value="0" class="slider" id="badkamer">
-                <p>score: <span id="badkamervalue"></span></p></li>
+                <span class="distance-score">score:</span>
+                 <span id="badkamervalue">score:</span></li>
 
 
             <li class="score-range">tuin <input type="range" min="1" max="10" value="0" class="slider" id="tuin">
-                <p>score: <span id="tuinvalue"></span></p></li>
+                <span class="distance-score">score:</span>
+                 <span id="tuinvalue">score:</span></li>
 
 
-            <li class="score-range">prijs <input type="range" min="1" max="10" value="0" class="slider" id="prijs">
-                <p>score: <span id="prijsvalue"></span></p></li>
-            <li class="score-range">ligging <input type="range" min="1" max="10" value="0" class="slider" id="ligging">
-                <p>score: <span id="liggingvalue"></span></p></li>
-            <li class="score-range">oppervlakte <input type="range" min="1" max="10" value="0" class="slider" id="oppervlakte">
-                <p>score: <span id="oppervlaktevalue"></span></p></li>
+            <li class="score-range">prijs <input type="range" min="1" max="10" value="0" class="slider" id="prijs">       <span class="distance-score">score:</span>
+            <span id="prijsvalue">score:</span></li>
+            <li class="score-range">ligging <input type="range" min="1" max="10" value="0" class="slider" id="ligging">       <span class="distance-score">score:</span>
+               <span id="liggingvalue">score:</span></li>
+            <li class="score-range">oppervlakte <input type="range" min="1" max="10" value="0" class="slider" id="oppervlakte">       <span class="distance-score">score:</span>
+               <span id="oppervlaktevalue">score:</span></li>
         </ul>
 
 
@@ -66,7 +71,7 @@
             <label for="bericht">
                 <textarea id="bericht" required name="bericht"></textarea>
             </label>
-            <button type="submit" class="button-notes">laat je notite achter</button>
+            <button type="submit" class="button-notes notes">laat je notite achter</button>
 
         </form>
 
