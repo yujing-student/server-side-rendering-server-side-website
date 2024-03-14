@@ -101,6 +101,7 @@ a:hover {
 .filter-section {
 
   margin: 2em 0 0 2em;
+
 }
 .styling-searchbutton{
   background-color: var(--orange);
@@ -120,7 +121,7 @@ article {
 
 
 .image-size {
-  width: 200px;
+  width: 230px;
 }
 
 .wonen {
@@ -132,6 +133,11 @@ article {
 .icons-house {
   margin: 0 0.8em 0 0;
   font-size:1.2em;
+}
+.grid-items-house {
+  display: grid;
+  row-gap: 6px;
+  max-width: 16em;
 }
 
 .beschrijving {
@@ -201,8 +207,8 @@ li {
 }
 
 .grid-items-house {
-  display: grid;
-  row-gap: 6px;
+
+  max-width: 17em;
 }
 .grid-items-house li {
   display: flex;
