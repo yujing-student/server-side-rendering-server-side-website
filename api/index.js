@@ -1,6 +1,9 @@
 // Importeer het npm pakket express uit de node_modules map
 import express, {json} from 'express'
 
+
+const path = require('path')
+const express = require('express')
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
