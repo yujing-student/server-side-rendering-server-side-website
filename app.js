@@ -9,15 +9,15 @@ const messages = []
 
 
 const allData_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
-
+// file:///D:/OneDrive%20-%20HvA/jaar1/periode3/sprint7/lesmatariaal/S07W2-02-Filteren-sorteren.pdf
 const favorite_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_list')
-
+const filter_city = await fetchJson('https://fdnd-agency.directus.app/items/f_houses/?filter={%22city%22:{%22_icontains%22:%22Amsterdam%22}}');
+console.log(JSON.stringify(test))
 const app = express()
 
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
 // gebruik ejs voor het tonen van de informatie aan de gebruiker
-
 // Stel de map met ejs templates in
 app.set('views', './views')
 // hierdoor word gezegt dat je in de views map moet kijken
@@ -80,7 +80,7 @@ app.get('/Detailpage/:id', function (request, response) {
         .then((apiData) => {
             // request.params.id gebruik je zodat je de exacte student kan weergeven dit si een routeparmater naar de route van die persoon
             if (apiData.data) {/*als data voer dan dit uit */
-                console.log('data bestaat u gaat nu naar de Detailpage page' + JSON.stringify(apiData))
+                // console.log('data bestaat u gaat nu naar de Detailpage page' + JSON.stringify(apiData))
                 // info gebruiken om die te linken aan apidata.data
                 response.render('Detailpage', {
                     house: apiData.data, images:
