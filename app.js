@@ -11,8 +11,6 @@ const messages = []
 const allData_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_houses')
 // file:///D:/OneDrive%20-%20HvA/jaar1/periode3/sprint7/lesmatariaal/S07W2-02-Filteren-sorteren.pdf
 const favorite_houses = await fetchJson('https://fdnd-agency.directus.app/items/f_list')
-const filter_city = await fetchJson('https://fdnd-agency.directus.app/items/f_houses/?filter={%22city%22:{%22_icontains%22:%22Amsterdam%22}}');
-console.log(JSON.stringify(test))
 const app = express()
 
 // Stel ejs in als template engine
